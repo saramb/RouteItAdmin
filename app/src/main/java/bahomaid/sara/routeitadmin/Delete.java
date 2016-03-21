@@ -18,8 +18,6 @@ public class Delete extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         delete_bus_station=(Button)findViewById(R.id.button10);
         delete_metro_station=(Button)findViewById(R.id.button11);
