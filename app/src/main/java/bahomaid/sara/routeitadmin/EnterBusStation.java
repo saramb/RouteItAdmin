@@ -125,9 +125,12 @@ public class EnterBusStation extends AppCompatActivity {
 
                     String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
 
-                    String sara= "sara__"+LocationID+"_"+ coorX.getText().toString()+"_"+coorY.getText().toString()+"_"+ name.getText().toString()+"_"+dropdown2.getSelectedItem().toString()+"_"+dropdown1.getSelectedItemPosition()+"_"+Login.admin+dropdown3.getSelectedItemPosition()+"";
+                    String sara= "sara__"+LocationID+"_"+ coorX.getText().toString()+"_"+coorY.getText().toString()+"_"+ name.getText().toString()+"_";
 
-
+ if(dropdown2.getSelectedItem().toString()==null)
+sara+=dropdown2.getSelectedItem().toString()+"_";
+                    else
+     sara+=dropdown1.getSelectedItemPosition()+"_"+Login.admin+"_"+dropdown3.getSelectedItemPosition()+"";
                     new AlertDialog.Builder(EnterBusStation.this)
                             .setMessage("Are you sure you want to continue the  entering process ?"+sara)
                             .setPositiveButton("Enter", new DialogInterface.OnClickListener() {
@@ -146,20 +149,12 @@ public class EnterBusStation extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
     }
 
-
-
-
     private void EnterBusStation(){
-
-
         //Here we will handle the http request to insert user to mysql db
         //Creating a RestAdapter
+
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
                 .build();  //Finally building the adapter
@@ -169,21 +164,28 @@ public class EnterBusStation extends AppCompatActivity {
 
         String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
 
+        String metro="";
 
+        if(dropdown2.getSelectedItem().toString().equals(""))
+            metro="1";
 
  //Admin=getIntent().getExtras().getString("AdminID");
         //Defining the method insertuser of our interface
         api.EnterBusStation(
+
 
                 //Passing the values by getting it from editTexts
                 LocationID,
                 coorX.getText().toString(),
                 coorY.getText().toString(),
                 name.getText().toString(),
-                dropdown2.getSelectedItem().toString(),
+                //dropdown2.getSelectedItem().toString(),
+                metro,
                 dropdown1.getSelectedItemPosition(),
                 Login.admin,
                 dropdown3.getSelectedItemPosition()+"",
+
+
 
 
                 //Creating an anonymous callback
