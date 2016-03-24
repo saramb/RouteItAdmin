@@ -83,13 +83,19 @@ public class EnterBusStation extends AppCompatActivity {
                 d2=dropdown2.getSelectedItem().toString();
                 d3=dropdown3.getSelectedItem().toString();
 
-                if (s.equals("") || n.equals("") || c.equals("") || c2.equals("") || d1.equals(" ") ||d3.equals(" ")||st.equals("")) {
+                if (s.equals("") || n.equals("") || c.equals("") || c2.equals("") || d1.equals(" ") ||d3.equals(" ")||d2.equals("")||st.equals("")) {
 
                     if (dropdown1.getSelectedItem().toString().equals(" ")) {
                         //error.requestFocus();
                         error.setError("Please select line ID");
                     }else
                         error.setError(null);
+
+                    if (dropdown2.getSelectedItem().toString().equals(" ")) {
+                        // error2.requestFocus();
+                        error2.setError("Please select the position of the station");
+                    }else
+                        error2.setError(null);
 
                     if (dropdown3.getSelectedItem().toString().equals(" ")) {
                         // error2.requestFocus();
@@ -123,16 +129,9 @@ public class EnterBusStation extends AppCompatActivity {
                     name.setError(null);
                     street.setError(null);
 
-                    String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
 
-                    String sara= "sara__"+LocationID+"_"+ coorX.getText().toString()+"_"+coorY.getText().toString()+"_"+ name.getText().toString()+"_";
-
- if(dropdown2.getSelectedItem().toString()==null)
-sara+=dropdown2.getSelectedItem().toString()+"_";
-                    else
-     sara+=dropdown1.getSelectedItemPosition()+"_"+Login.admin+"_"+dropdown3.getSelectedItemPosition()+"";
                     new AlertDialog.Builder(EnterBusStation.this)
-                            .setMessage("Are you sure you want to continue the  entering process ?"+sara)
+                            .setMessage("Are you sure you want to continue the  entering process ?")
                             .setPositiveButton("Enter", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -164,10 +163,7 @@ sara+=dropdown2.getSelectedItem().toString()+"_";
 
         String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
 
-        String metro="";
 
-        if(dropdown2.getSelectedItem().toString().equals(""))
-            metro="1";
 
  //Admin=getIntent().getExtras().getString("AdminID");
         //Defining the method insertuser of our interface
@@ -179,8 +175,7 @@ sara+=dropdown2.getSelectedItem().toString()+"_";
                 coorX.getText().toString(),
                 coorY.getText().toString(),
                 name.getText().toString(),
-                //dropdown2.getSelectedItem().toString(),
-                metro,
+                dropdown2.getSelectedItem().toString(),
                 dropdown1.getSelectedItemPosition(),
                 Login.admin,
                 dropdown3.getSelectedItemPosition()+"",
