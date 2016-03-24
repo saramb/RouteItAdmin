@@ -173,6 +173,8 @@ public class DeleteBusStation extends AppCompatActivity {
                                 }
                             }
 
+                            //
+
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(DeleteBusStation.this, android.R.layout.simple_dropdown_item_1line, spin);
                             dropdown.setAdapter(adapter);
 
