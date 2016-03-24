@@ -129,8 +129,13 @@ public class EnterBusStation extends AppCompatActivity {
                     name.setError(null);
                     street.setError(null);
 
+                    String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
+
+                    String sara= "sara__"+LocationID+"_"+ coorX.getText().toString()+"_"+coorY.getText().toString()+"_"+ name.getText().toString()+"_"+dropdown2.getSelectedItem().toString()+"_"+dropdown1.getSelectedItemPosition()+"_"+Login.admin+dropdown3.getSelectedItemPosition()+"";
+
+
                     new AlertDialog.Builder(EnterBusStation.this)
-                            .setMessage("Are you sure you want to continue the  entering process ?")
+                            .setMessage("Are you sure you want to continue the  entering process ?"+sara)
                             .setPositiveButton("Enter", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -157,6 +162,8 @@ public class EnterBusStation extends AppCompatActivity {
 
 
     private void EnterBusStation(){
+
+
         //Here we will handle the http request to insert user to mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
@@ -167,6 +174,9 @@ public class EnterBusStation extends AppCompatActivity {
         routeAPI api = adapter.create(routeAPI.class);
 
         String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
+
+
+
  //Admin=getIntent().getExtras().getString("AdminID");
         //Defining the method insertuser of our interface
         api.EnterBusStation(
@@ -199,7 +209,6 @@ public class EnterBusStation extends AppCompatActivity {
 
                             //Reading the output in the string
                             output = reader.readLine();
-
                             Toast.makeText(EnterBusStation.this, output, Toast.LENGTH_LONG).show();
 
                         } catch (IOException e) {
