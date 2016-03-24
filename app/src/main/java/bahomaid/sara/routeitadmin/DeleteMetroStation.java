@@ -189,8 +189,8 @@ public class DeleteMetroStation extends AppCompatActivity {
                             output = reader.readLine();
 
                             while (!output.equals("")) {
-                                String stationName = output.substring(0, output.indexOf(" "));
-                                output = output.substring(output.indexOf(" ") + 1);
+                                String stationName = output.substring(0, output.indexOf("/"));
+                                output = output.substring(output.indexOf("/") + 1);
                                 if (!spin.contains(stationName)) {
                                     spin.add(stationName);
                                 }

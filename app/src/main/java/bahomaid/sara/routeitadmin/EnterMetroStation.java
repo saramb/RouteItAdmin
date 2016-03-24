@@ -229,8 +229,8 @@ public class EnterMetroStation extends AppCompatActivity {
 
                             while(!output.equals("")) {
                                 //Toast.makeText(EnterMetroStation.this, output, Toast.LENGTH_LONG).show();
-                                String color = output.substring(0, output.indexOf(" "));
-                                output = output.substring(output.indexOf(" ") + 1);
+                                String color = output.substring(0, output.indexOf("/"));
+                                output = output.substring(output.indexOf("/") + 1);
                                 if (!spin.contains(color)) {
                                     spin.add(color);
                                 }

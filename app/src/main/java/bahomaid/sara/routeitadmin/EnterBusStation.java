@@ -264,8 +264,8 @@ public class EnterBusStation extends AppCompatActivity {
 
                             while(!output.equals("")) {
                                 // Toast.makeText(EnterBusStation.this, output, Toast.LENGTH_LONG).show();
-                                String color = output.substring(0, output.indexOf(" "));
-                                output = output.substring(output.indexOf(" ") + 1);
+                                String color = output.substring(0, output.indexOf("/"));
+                                output = output.substring(output.indexOf("/") + 1);
                                 if (!spin.contains(color)) {
                                     spin.add(color);
                                 }
@@ -328,8 +328,8 @@ public class EnterBusStation extends AppCompatActivity {
 
                             while (!output2.equals("")) {
                                 // Toast.makeText(EnterBusStation.this, output, Toast.LENGTH_LONG).show();
-                                String color2 = output2.substring(0, output2.indexOf(" "));
-                                output2 = output2.substring(output2.indexOf(" ") + 1);
+                                String color2 = output2.substring(0, output2.indexOf("/"));
+                                output2 = output2.substring(output2.indexOf("/") + 1);
                                 if (!spinMetro.contains(color2)) {
                                     spinMetro.add(color2);
                                 }

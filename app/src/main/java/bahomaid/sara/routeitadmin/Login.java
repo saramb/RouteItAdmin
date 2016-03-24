@@ -31,7 +31,7 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-    public static final String ROOT_URL ="http://10.6.207.70:8082/";
+    public static final String ROOT_URL ="http://192.168.1.59/";
     public static String admin="";
 
     EditText username , pass;
