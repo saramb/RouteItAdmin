@@ -162,7 +162,7 @@ public class EnterBusStation extends AppCompatActivity {
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
-                .build(); //Finally building the adapter
+                .build();  //Finally building the adapter
 
         //Creating object for our interface
         routeAPI api = adapter.create(routeAPI.class);
