@@ -83,19 +83,13 @@ public class EnterBusStation extends AppCompatActivity {
                 d2=dropdown2.getSelectedItem().toString();
                 d3=dropdown3.getSelectedItem().toString();
 
-                if (s.equals("") || n.equals("") || c.equals("") || c2.equals("") || d1.equals(" ") || d2.equals(" ")||d3.equals(" ")||st.equals("")) {
+                if (s.equals("") || n.equals("") || c.equals("") || c2.equals("") || d1.equals(" ") ||d3.equals(" ")||st.equals("")) {
 
                     if (dropdown1.getSelectedItem().toString().equals(" ")) {
                         //error.requestFocus();
                         error.setError("Please select line ID");
                     }else
                         error.setError(null);
-
-                    if (dropdown2.getSelectedItem().toString().equals(" ")) {
-                        // error2.requestFocus();
-                        error2.setError("Please select a value");
-                    }else
-                        error2.setError(null);
 
                     if (dropdown3.getSelectedItem().toString().equals(" ")) {
                         // error2.requestFocus();
