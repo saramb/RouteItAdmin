@@ -190,8 +190,6 @@ public class EnterBusStation extends AppCompatActivity {
 
 
 
-
-
                 if(done1 &&done2 &&done3 &&done4 &&done5){
 
                     error.setError(null);
