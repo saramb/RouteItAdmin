@@ -39,6 +39,11 @@ public class EnterBusStation extends AppCompatActivity {
     EditText station,coorX ,name,coorY,street;
     Button enter;
     ArrayAdapter<String> adapter;
+    boolean done1=false;
+    boolean done2=false;
+    boolean done3=false;
+    boolean done4=false;
+    boolean done5=false;
 
 
 
@@ -89,9 +94,10 @@ public class EnterBusStation extends AppCompatActivity {
                 d2=dropdown2.getSelectedItem().toString();
                 d3=dropdown3.getSelectedItem().toString();
 
-                if (s.equals("") || n.equals("") || c.equals("") || c2.equals("") || d1.equals(" ") ||d3.equals(" ")||d2.equals("")||st.equals("")) {
+                if (s.equals("") || n.equals("") || c.equals("") || c2.equals("") || d1.equals(" ") ||d3.equals(" ")||d2.equals("")||st.equals("")) {done1=false;} else{done1=true;}
 
-                    if (dropdown1.getSelectedItem().toString().equals(" ")) {
+
+            if (dropdown1.getSelectedItem().toString().equals(" ")) {
                         //error.requestFocus();
                         error.setError("Please select line ID");
                     }else
@@ -112,28 +118,97 @@ public class EnterBusStation extends AppCompatActivity {
                     if (station.getText().toString().equals("")) {
                         station.setError("Please fill station ID");
                     }
+                    else{
+                        station.setError(null);
+                        if (android.text.TextUtils.isDigitsOnly(station.getText().toString())) {
+                            done2 = true;
+                            station.setError(null);
+                        } else {
+                            station.setError("Please enter digits only");
+                            done2=false;
+                        }
+                    }
                     if (name.getText().toString().equals("")) {
                         name.setError("Please fill the name");
                     }
                     if (coorX.getText().toString().equals("")) {
                         coorX.setError("Please fill the X coordination");
-                    }
+                    }else{
+
+                        coorX.setError(null);
+
+                        if (coorX.getText().toString().contains(".") && coorX.getText().toString().length() >= 3 &&
+                            coorX.getText().toString().substring(0, coorX.getText().toString().indexOf(".")).equals("24") &&
+                            android.text.TextUtils.isDigitsOnly(coorX.getText().toString().substring(coorX.getText().toString().indexOf(".") + 1))) {
+
+                        coorX.setError(null);
+                        done4 = true;
+
+                    } else {
+                        coorX.setError("Please enter correct coordination ");
+                            done4 = false;
+
+                        }}
                     if (coorY.getText().toString().equals("")) {
                         coorY.setError("Please fill the Y coordination");
+                    }else{
+                        coorY.setError(null);
+                        if (coorY.getText().toString().contains(".") && coorY.getText().toString().length() >= 3 &&
+                                coorY.getText().toString().substring(0, coorY.getText().toString().indexOf(".")).equals("46") &&
+                                android.text.TextUtils.isDigitsOnly(coorY.getText().toString().substring(coorY.getText().toString().indexOf(".") + 1))) {
+
+                            coorY.setError(null);
+                            done5 = true;
+
+                        } else {
+                            coorY.setError("Please enter correct coordination ");
+                            done5 = false;
+
+                        }
                     }
                     if (street.getText().toString().equals("")) {
                         street.setError("Please fill the station street");
                     }
+                    else{
+                        street.setError(null);
 
-                } else {
+                        if (android.text.TextUtils.isDigitsOnly(street.getText().toString()) && street.getText().toString().length() <= 2) {
+                            street.setError(null);
+                            done3 = true;
+                        } else {
+                            street.setError("Please enter 2 digits only");
+                            done3 = false;
+
+                        }
+
+                    }
+
+
+
+
+
+
+
+
+
+
+                if(done1 &&done2 &&done3 &&done4 &&done5){
 
                     error.setError(null);
                     error2.setError(null);
+                    error3.setError(null);
                     coorX.setError(null);
                     coorY.setError(null);
                     station.setError(null);
                     name.setError(null);
                     street.setError(null);
+
+
+                    done1=false;
+                    done2=false;
+                    done3=false;
+                    done4=false;
+                    done5=false;
 
                     if (dropdown1.getSelectedItem().toString().equals("Green")) {
                         dropdown3.setSelection(1);

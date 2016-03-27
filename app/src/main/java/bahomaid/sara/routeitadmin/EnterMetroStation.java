@@ -37,6 +37,11 @@ public class EnterMetroStation extends AppCompatActivity {
     Button enter;
     TextView error , error2;
 
+    boolean done1=false;
+    boolean done3=false;
+    boolean done4=false;
+    boolean done5=false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +79,7 @@ public class EnterMetroStation extends AppCompatActivity {
                 c2=coor2.getText().toString();
 
 
-                if (s.equals("") || n.equals("") || c.equals("")|| Position.getSelectedItem().toString().equals(" ") || MetroLine.getSelectedItem().toString().equals(" ")) {
+                if (s.equals("") || n.equals("") || c.equals("")|| Position.getSelectedItem().toString().equals(" ") || MetroLine.getSelectedItem().toString().equals(" ")) {done1=false;} else{done1=true;}
 
                     if(MetroLine.getSelectedItem().toString().equals(" ")){
                         error.requestFocus();
@@ -90,6 +95,16 @@ public class EnterMetroStation extends AppCompatActivity {
 
                     if (station.getText().toString().equals("")) {
                         station.setError("Please fill station ID");
+                    }else{
+
+                        station.setError(null);
+                        if (android.text.TextUtils.isDigitsOnly(station.getText().toString())) {
+                            done3 = true;
+                            station.setError(null);
+                        } else {
+                            station.setError("Please enter digits only");
+                            done3=false;
+                        }
                     }
 
                     if (name.getText().toString().equals("")) {
@@ -98,15 +113,55 @@ public class EnterMetroStation extends AppCompatActivity {
                     if (coor.getText().toString().equals("")) {
                         coor.setError("Please fill the coordination");
                     }
+                else{
+                        coor.setError(null);
+
+                        if (coor.getText().toString().contains(".") && coor.getText().toString().length() >= 3 &&
+                                coor.getText().toString().substring(0, coor.getText().toString().indexOf(".")).equals("24") &&
+                                android.text.TextUtils.isDigitsOnly(coor.getText().toString().substring(coor.getText().toString().indexOf(".") + 1))) {
+
+                            coor.setError(null);
+                            done4 = true;
+
+                        } else {
+                            coor.setError("Please enter correct coordination ");
+                            done4 = false;
+
+                        }
+
+
+                    }
+
                     if (coor2.getText().toString().equals("")) {
                         coor2.setError("Please fill the coordination");
+                    }                else{
+                        coor2.setError(null);
+
+                        if (coor2.getText().toString().contains(".") && coor2.getText().toString().length() >= 3 &&
+                                coor2.getText().toString().substring(0, coor2.getText().toString().indexOf(".")).equals("46") &&
+                                android.text.TextUtils.isDigitsOnly(coor2.getText().toString().substring(coor2.getText().toString().indexOf(".") + 1))) {
+
+                            coor2.setError(null);
+                            done5 = true;
+
+                        } else {
+                            coor2.setError("Please enter correct coordination ");
+                            done5 = false;
+
+                        }
+
+
                     }
-                } else {
-                    error.setError(null);
+
+
+
+
+                if(done1&&done3 &&done4 &&done5){
                     coor.setError(null);
                     coor2.setError(null);
                     station.setError(null);
                     name.setError(null);
+                    error2.setError(null);
                     error.setError(null);
 
                     new AlertDialog.Builder(EnterMetroStation.this)
