@@ -38,7 +38,7 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            />
+            android:hint="Please enter your notification" />
 
         <TextView
             android:layout_width="277dp"

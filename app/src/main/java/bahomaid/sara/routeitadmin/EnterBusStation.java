@@ -33,6 +33,7 @@ public class EnterBusStation extends AppCompatActivity {
     List<String> spin = new ArrayList<String>();
     List<String> spinMetro = new ArrayList<String>();
     List<String> spinPosition = new ArrayList<String>();
+    List<String> spinPosition2 = new ArrayList<String>();
     TextView error,error2,error3, stationStreet ;
     String s,n,c,c2,d1,d2,d3,st,Admin;
     EditText station,coorX ,name,coorY,street;
@@ -65,6 +66,10 @@ public class EnterBusStation extends AppCompatActivity {
         spinPosition.add(" ");
         spinPosition.add("At the begining");
         spinPosition.add("At the end");
+
+
+
+
         adapter = new ArrayAdapter<String>(EnterBusStation.this,android.R.layout.simple_dropdown_item_1line, spinPosition);
         dropdown3.setAdapter(adapter);
 
@@ -73,6 +78,7 @@ public class EnterBusStation extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 s = station.getText().toString();
                 n = name.getText().toString();
@@ -129,7 +135,10 @@ public class EnterBusStation extends AppCompatActivity {
                     name.setError(null);
                     street.setError(null);
 
+                    if (dropdown1.getSelectedItem().toString().equals("Green")) {
+                        dropdown3.setSelection(1);
 
+                    }
                     new AlertDialog.Builder(EnterBusStation.this)
                             .setMessage("Are you sure you want to continue the  entering process ?")
                             .setPositiveButton("Enter", new DialogInterface.OnClickListener() {
@@ -142,6 +151,7 @@ public class EnterBusStation extends AppCompatActivity {
                             .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+
                                 }
                             })
                             .show();
