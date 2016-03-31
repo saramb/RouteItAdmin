@@ -31,7 +31,6 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-    //public static final String ROOT_URL ="http://192.168.100.12/";
     public static final String ROOT_URL ="http://rawan.16mb.com/tesst/";
 
     public static String admin="";
@@ -39,7 +38,6 @@ public class Login extends AppCompatActivity {
     EditText username , pass;
     TextView wrong;
     Button login;
-    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +121,6 @@ public class Login extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),output+"",Toast.LENGTH_SHORT).show();
                                 admin=username.getText().toString();
                                 Intent i = new Intent(getApplicationContext(),Menu.class);
-                              //  i.putExtra("AdminID", username.getText().toString());
                                 startActivity(i);
                         }
 
@@ -146,54 +143,5 @@ public class Login extends AppCompatActivity {
                 }
         );
     }
-
-    /*
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) { //map
-            // Handle the map action
-            Intent intent = new Intent (this, map.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_gallery) {  //favorites
-            Intent intent = new Intent (this, Favorites.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_slideshow) { //
-            Intent intent = new Intent (this, loginnav.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_manage) {  //about us
-            Intent intent = new Intent (this, aboutusnav.class);
-            startActivity(intent);
-
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-*/
-
 
 }
