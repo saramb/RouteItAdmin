@@ -7,7 +7,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/lightpurple"
     tools:context="bahomaid.sara.routeitadmin.Login">
 
         <LinearLayout
@@ -25,53 +24,39 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="20dp"
                 android:weightSum="1"
-                android:layout_marginTop="250dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Username:  "
-                    android:textSize="18dp"
-                    android:id="@+id/textView" />
+                android:layout_marginTop="250dp"
+                android:background="#f9f7f7">
 
                 <EditText
-                    android:layout_width="232dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="299dp"
+                    android:layout_height="40dp"
                     android:id="@+id/username"
                     android:hint="Enter your username"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
-                    android:background="@color/white"
-                    />
+                    android:background="#eae7e7"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="10dp"
                 android:weightSum="1" >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Password:  "
-                    android:id="@+id/textView22"
-                    android:textSize="18dp"
-                    />
-
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="299dp"
+                    android:layout_height="40dp"
                     android:id="@+id/pass"
                     android:layout_weight="0.56"
                     android:password="true"
                     android:hint="Enter your password"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
-                    android:background="@color/white"
-                    />
+                    android:background="#eae7e7"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
