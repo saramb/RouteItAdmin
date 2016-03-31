@@ -166,6 +166,10 @@ public class EnterMetroStation extends AppCompatActivity {
                     error2.setError(null);
                     error.setError(null);
 
+                    done1=false;
+                    done3=false;
+                    done4=false;
+                    done5=false;
                     new AlertDialog.Builder(EnterMetroStation.this)
                             .setMessage("are you sure you want to continue the  entering process ?")
                             .setPositiveButton("Enter", new DialogInterface.OnClickListener() {
