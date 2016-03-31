@@ -137,7 +137,7 @@ public class EnterBusStation extends AppCompatActivity {
 
                         coorX.setError(null);
 
-                        if (coorX.getText().toString().contains(".") && coorX.getText().toString().length() >= 3 &&
+                        if (coorX.getText().toString().contains(".") && coorX.getText().toString().length() >= 4 &&
                             coorX.getText().toString().substring(0, coorX.getText().toString().indexOf(".")).equals("24") &&
                             android.text.TextUtils.isDigitsOnly(coorX.getText().toString().substring(coorX.getText().toString().indexOf(".") + 1))) {
 
@@ -145,7 +145,7 @@ public class EnterBusStation extends AppCompatActivity {
                         done4 = true;
 
                     } else {
-                        coorX.setError("Please enter correct coordination ");
+                        coorX.setError("Please enter coordinate start with 24.XXX ");
                             done4 = false;
 
                         }}
@@ -153,7 +153,7 @@ public class EnterBusStation extends AppCompatActivity {
                         coorY.setError("Please fill the Y coordination");
                     }else{
                         coorY.setError(null);
-                        if (coorY.getText().toString().contains(".") && coorY.getText().toString().length() >= 3 &&
+                        if (coorY.getText().toString().contains(".") && coorY.getText().toString().length() >= 4 &&
                                 coorY.getText().toString().substring(0, coorY.getText().toString().indexOf(".")).equals("46") &&
                                 android.text.TextUtils.isDigitsOnly(coorY.getText().toString().substring(coorY.getText().toString().indexOf(".") + 1))) {
 
@@ -161,7 +161,7 @@ public class EnterBusStation extends AppCompatActivity {
                             done5 = true;
 
                         } else {
-                            coorY.setError("Please enter correct coordination ");
+                            coorY.setError("Please enter coordinate start with 46.XXX");
                             done5 = false;
 
                         }

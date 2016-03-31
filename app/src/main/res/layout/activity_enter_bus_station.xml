@@ -138,7 +138,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText2"
-                    android:hint="Please enter station street" />
+                    android:hint="Please enter station street"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -162,7 +164,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText4"
-                    android:hint="Please enter station ID" />
+                    android:hint="Please enter station ID"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -188,7 +192,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText5"
-                    android:hint="Please enter station name" />
+                    android:hint="Please enter station name"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -212,7 +218,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText15"
-                    android:hint="Please enter X Coordinate:" />
+                    android:hint="Please enter X Coordinate:"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -231,7 +239,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Y Coordinate:"
-                    android:id="@+id/textView30" />
+                    android:id="@+id/textView30"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"/>
 
                 <EditText
                     android:layout_width="match_parent"

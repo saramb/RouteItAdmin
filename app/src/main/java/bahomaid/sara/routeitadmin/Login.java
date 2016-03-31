@@ -31,7 +31,9 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-    public static final String ROOT_URL ="http://192.168.100.15:8082/";
+    //public static final String ROOT_URL ="http://192.168.100.12/";
+    public static final String ROOT_URL ="http://rawan.16mb.com/tesst/";
+
     public static String admin="";
 
     EditText username , pass;
@@ -50,17 +52,7 @@ public class Login extends AppCompatActivity {
         login = (Button) findViewById(R.id.button);
         wrong=(TextView)findViewById(R.id.textView31);
 
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +136,6 @@ public class Login extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        //Displaying the output as a toast
                     }
 
                     @Override

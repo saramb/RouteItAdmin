@@ -110,13 +110,15 @@ public class EnterMetroStation extends AppCompatActivity {
                     if (name.getText().toString().equals("")) {
                         name.setError("Please fill the name");
                     }
+
                     if (coor.getText().toString().equals("")) {
                         coor.setError("Please fill the coordination");
                     }
+
                 else{
                         coor.setError(null);
 
-                        if (coor.getText().toString().contains(".") && coor.getText().toString().length() >= 3 &&
+                        if (coor.getText().toString().contains(".") && coor.getText().toString().length() >= 4 &&
                                 coor.getText().toString().substring(0, coor.getText().toString().indexOf(".")).equals("24") &&
                                 android.text.TextUtils.isDigitsOnly(coor.getText().toString().substring(coor.getText().toString().indexOf(".") + 1))) {
 
@@ -124,7 +126,7 @@ public class EnterMetroStation extends AppCompatActivity {
                             done4 = true;
 
                         } else {
-                            coor.setError("Please enter correct coordination ");
+                            coor.setError("Please enter coordinate start with 24.XXX");
                             done4 = false;
 
                         }
@@ -137,7 +139,7 @@ public class EnterMetroStation extends AppCompatActivity {
                     }                else{
                         coor2.setError(null);
 
-                        if (coor2.getText().toString().contains(".") && coor2.getText().toString().length() >= 3 &&
+                        if (coor2.getText().toString().contains(".") && coor2.getText().toString().length() >= 4 &&
                                 coor2.getText().toString().substring(0, coor2.getText().toString().indexOf(".")).equals("46") &&
                                 android.text.TextUtils.isDigitsOnly(coor2.getText().toString().substring(coor2.getText().toString().indexOf(".") + 1))) {
 
@@ -145,7 +147,7 @@ public class EnterMetroStation extends AppCompatActivity {
                             done5 = true;
 
                         } else {
-                            coor2.setError("Please enter correct coordination ");
+                            coor2.setError("Please enter coordinate start with 46.XXX");
                             done5 = false;
 
                         }

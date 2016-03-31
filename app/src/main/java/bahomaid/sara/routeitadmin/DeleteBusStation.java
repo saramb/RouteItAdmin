@@ -119,7 +119,6 @@ public class DeleteBusStation extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        //Displaying the output as a toast
                     }
 
                     @Override

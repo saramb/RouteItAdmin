@@ -1,4 +1,5 @@
 <resources>
     <string name="name_">Admin</string>
     <string name="app_name">Admin</string>
+    <string name="logo">logo</string>
 </resources>

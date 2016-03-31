@@ -100,7 +100,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/metroId"
-                    android:hint="Please enter station ID" />
+                    android:hint="Please enter station ID"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
 
             </LinearLayout>
 
@@ -123,7 +125,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/metroName"
-                    android:hint="Please enter station name" />
+                    android:hint="Please enter station name"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
             </LinearLayout>
 
             <LinearLayout
@@ -145,7 +149,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/metroCoordinates"
                     android:layout_weight="0.75"
-                    android:hint="Please enter X Coordinate" />
+                    android:hint="Please enter X Coordinate"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"/>
             </LinearLayout>
 
             <LinearLayout
@@ -166,7 +172,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/metroCoordinates2"
                     android:layout_marginBottom="20dp"
-                    android:hint="Please enter Y Coordinate:" />
+                    android:hint="Please enter Y Coordinate:"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"/>
             </LinearLayout>
 
             <LinearLayout
