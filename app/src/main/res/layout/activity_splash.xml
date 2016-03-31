@@ -10,10 +10,9 @@
     tools:context="bahomaid.sara.routeitadmin.Splash">
 
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="990dp"
+        android:layout_width="500dp"
+        android:layout_height="800dp"
         android:id="@+id/imageView3"
-        android:layout_gravity="center"
         android:src="@drawable/logos"
         android:scaleType="centerCrop" />
 
