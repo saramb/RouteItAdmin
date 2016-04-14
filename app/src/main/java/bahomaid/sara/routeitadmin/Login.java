@@ -32,8 +32,8 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-   // public static final String ROOT_URL ="http://rawan.16mb.com/tesst/";
-    public static final String ROOT_URL ="http://192.168.1.62:8082/";
+    public static final String ROOT_URL ="http://rawan.16mb.com/tesst/";
+   // public static final String ROOT_URL ="http://192.168.1.63:8082/";
 
     public static String admin="";
 
@@ -141,7 +141,8 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(Login.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(Login.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );

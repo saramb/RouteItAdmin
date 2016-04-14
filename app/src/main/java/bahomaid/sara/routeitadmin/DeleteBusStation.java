@@ -124,7 +124,9 @@ public class DeleteBusStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(DeleteBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(DeleteBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(DeleteBusStation.this,"Please check your internet connection", Toast.LENGTH_LONG).show();
+
                     }
                 }
         );
@@ -188,7 +190,8 @@ public class DeleteBusStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(DeleteBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                       // Toast.makeText(DeleteBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(DeleteBusStation.this,"Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -205,7 +208,7 @@ public class DeleteBusStation extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
-            Intent intent = new Intent (getApplicationContext(),Menu.class);
+            Intent intent = new Intent (getApplicationContext(),Delete.class);
             startActivity(intent);
             finish();
         }
@@ -219,7 +222,7 @@ public class DeleteBusStation extends AppCompatActivity {
                                     /*Intent intent = new Intent();
                                     PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
-                            Intent intent = new Intent (getApplicationContext(),Delete.class);
+                            Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);
                             finish();
                         }

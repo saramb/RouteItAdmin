@@ -259,7 +259,8 @@ public class EnterMetroStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(EnterMetroStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -325,7 +326,8 @@ public class EnterMetroStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                       // Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(EnterMetroStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -343,7 +345,7 @@ public class EnterMetroStation extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
-            Intent intent = new Intent (getApplicationContext(),Menu.class);
+            Intent intent = new Intent (getApplicationContext(),Enter.class);
             startActivity(intent);
             finish();
         }
@@ -357,9 +359,9 @@ public class EnterMetroStation extends AppCompatActivity {
                                     /*Intent intent = new Intent();
                                     PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
-                            Intent intent = new Intent (getApplicationContext(),Enter.class);
+                            Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);
-                            finish();
+                           finish();
 
                         }
                     })
