@@ -27,14 +27,17 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:weightSum="1">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Line ID:"
-                    android:id="@+id/textView18" />
+                    android:id="@+id/textView18"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <Spinner
                     android:layout_width="match_parent"
@@ -57,14 +60,17 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="30dp"
                 android:weightSum="1" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Station Position:"
-                    android:id="@+id/textView35" />
+                    android:id="@+id/textView35"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <Spinner
                     android:layout_width="match_parent"
@@ -85,22 +91,24 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:weightSum="1"
-                >
+                android:layout_marginBottom="25dp">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Station ID :"
-                    android:id="@+id/textView19" />
+                    android:id="@+id/textView19"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"
+                    />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/metroId"
-                    android:hint="Please enter station ID"
                     android:imeOptions="actionNext"
                     android:singleLine="true"/>
 
@@ -111,21 +119,22 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:weightSum="1"
-                >
+                android:layout_marginBottom="25dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name:"
-                    android:id="@+id/textView20" />
+                    android:id="@+id/textView20"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/metroName"
-                    android:hint="Please enter station name"
                     android:imeOptions="actionNext"
                     android:singleLine="true"/>
             </LinearLayout>
@@ -134,22 +143,23 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:weightSum="1"
-                >
+                android:layout_marginBottom="25dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="X Coordinate:"
-                    android:id="@+id/textView21" />
+                    android:id="@+id/textView21"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/metroCoordinates"
                     android:layout_weight="0.75"
-                    android:hint="Please enter X Coordinate"
                     android:imeOptions="actionNext"
                     android:singleLine="true"/>
             </LinearLayout>
@@ -158,21 +168,22 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:weightSum="1"
-                >
+                android:layout_marginBottom="15dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Y Coordinate:"
-                    android:id="@+id/Coordinates2" />
+                    android:id="@+id/Coordinates2"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/metroCoordinates2"
                     android:layout_marginBottom="20dp"
-                    android:hint="Please enter Y Coordinate:"
                     android:imeOptions="actionDone"
                     android:singleLine="true"/>
             </LinearLayout>
@@ -194,7 +205,6 @@
                     android:layout_marginTop="10dp"
                     android:background="@color/purple"
                     android:textColor="#FFFF"
-
                     android:id="@+id/button18"
                     />
             </LinearLayout>

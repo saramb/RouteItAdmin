@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,8 @@ public class NewPost extends AppCompatActivity {
 
         enter=(Button)findViewById(R.id.button13);
         message=(LineEditText)findViewById(R.id.message);
+        message.setHint(Html.fromHtml("<small><small>" + "Please enter your notification" + "</small></small>"));
+
         error=(TextView)findViewById(R.id.textView16);
 
         enter.setOnClickListener(new View.OnClickListener() {

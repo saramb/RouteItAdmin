@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -56,10 +57,21 @@ public class EnterBusStation extends AppCompatActivity {
 
         enter=(Button)findViewById(R.id.button9);
         station=(EditText)findViewById(R.id.editText4);
+        station.setHint(Html.fromHtml("<small><small>" + "Please enter station ID" + "</small></small>"));
+
         name=(EditText)findViewById(R.id.editText5);
+        name.setHint(Html.fromHtml("<small><small>" + "Please enter station name" + "</small><small>"));
+
         coorX=(EditText)findViewById(R.id.editText15);
+        coorX.setHint(Html.fromHtml("<small><small>" + "Please enter X Coordinate" + "</small></small>"));
+
         coorY=(EditText)findViewById(R.id.editText);
+        coorY.setHint(Html.fromHtml("<small><small>" + "Please enter Y Coordinate" + "</small></small>"));
+
+
         street=(EditText)findViewById(R.id.editText2);
+        street.setHint(Html.fromHtml("<small><small>" + "Please enter station street" + "</small></small>"));
+
         stationStreet=(TextView)findViewById(R.id.StreettextView);
         dropdown1=(Spinner)findViewById(R.id.spinner4);
         dropdown2=(Spinner)findViewById(R.id.spinner5);

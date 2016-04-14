@@ -24,18 +24,20 @@
                 android:layout_marginLeft="0dp"
                 android:layout_marginBottom="20dp"
                 android:weightSum="1"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="270dp"
                 android:background="#f9f7f7">
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/username"
-                    android:hint="Enter your username"
                     android:imeOptions="actionNext"
                     android:singleLine="true"
                     android:background="#eae7e7"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"/>
             </LinearLayout>
 
             <LinearLayout
@@ -50,11 +52,13 @@
                     android:id="@+id/pass"
                     android:layout_weight="0.56"
                     android:password="true"
-                    android:hint="Enter your password"
                     android:imeOptions="actionDone"
                     android:singleLine="true"
                     android:background="#eae7e7"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"/>
 
             </LinearLayout>
 
@@ -89,7 +93,7 @@
                     android:id="@+id/button"
                     android:background="@color/purple"
                     android:textColor="#FFFF"
-                    />
+                    android:layout_marginTop="10dp" />
             </LinearLayout>
 
         </LinearLayout>
