@@ -141,10 +141,17 @@ public class NewPost extends AppCompatActivity {
     @Override
     //to connect the menu with action listner when it is selected, we override this method
     public boolean onOptionsItemSelected(MenuItem item) {
+        ////////////////////////////////////////
+
+
+        ///////////////////////////////////////////
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
             Intent intent = new Intent (getApplicationContext(),Menu.class);
-            startActivity(intent); }
+            startActivity(intent);
+            finish();
+        }
+
         if (item.getItemId() == R.id.logout) {
 
             new AlertDialog.Builder(NewPost.this)
@@ -155,7 +162,7 @@ public class NewPost extends AppCompatActivity {
                                     /*Intent intent = new Intent();
                                     PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
-                            Intent intent = new Intent (getApplicationContext(),Login.class);
+                            Intent intent = new Intent (getApplicationContext(), Menu.class);
                             startActivity(intent);
                             finish();
                         }
@@ -168,7 +175,6 @@ public class NewPost extends AppCompatActivity {
                         }
                     })
                     .show();
-
         }
 
         //we can do multiple menus for the same activity, and switch between them depending on the condition I want

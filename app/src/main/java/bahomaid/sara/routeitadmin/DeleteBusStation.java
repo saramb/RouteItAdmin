@@ -206,7 +206,9 @@ public class DeleteBusStation extends AppCompatActivity {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
             Intent intent = new Intent (getApplicationContext(),Menu.class);
-            startActivity(intent); }
+            startActivity(intent);
+            finish();
+        }
         if (item.getItemId() == R.id.logout) {
 
             new AlertDialog.Builder(DeleteBusStation.this)
@@ -217,7 +219,7 @@ public class DeleteBusStation extends AppCompatActivity {
                                     /*Intent intent = new Intent();
                                     PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
-                            Intent intent = new Intent (getApplicationContext(),Login.class);
+                            Intent intent = new Intent (getApplicationContext(),Delete.class);
                             startActivity(intent);
                             finish();
                         }

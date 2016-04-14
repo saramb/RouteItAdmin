@@ -344,7 +344,9 @@ public class EnterMetroStation extends AppCompatActivity {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
             Intent intent = new Intent (getApplicationContext(),Menu.class);
-            startActivity(intent); }
+            startActivity(intent);
+            finish();
+        }
         if (item.getItemId() == R.id.logout) {
 
             new AlertDialog.Builder(EnterMetroStation.this)
@@ -355,9 +357,10 @@ public class EnterMetroStation extends AppCompatActivity {
                                     /*Intent intent = new Intent();
                                     PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
-                            Intent intent = new Intent (getApplicationContext(),Login.class);
+                            Intent intent = new Intent (getApplicationContext(),Enter.class);
                             startActivity(intent);
                             finish();
+
                         }
                     })
 
