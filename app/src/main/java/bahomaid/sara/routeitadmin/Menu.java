@@ -64,8 +64,7 @@ public class Menu extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
-            Intent intent = new Intent (getApplicationContext(),Login.class);
-            startActivity(intent); }
+            finish(); }
         if (item.getItemId() == R.id.logout) {
 
             new AlertDialog.Builder(Menu.this)
