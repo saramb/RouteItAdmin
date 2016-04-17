@@ -20,7 +20,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginBottom="20dp"
                 android:weightSum="1"
@@ -43,12 +43,12 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:weightSum="1" >
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/pass"
                     android:layout_weight="0.56"
                     android:password="true"
