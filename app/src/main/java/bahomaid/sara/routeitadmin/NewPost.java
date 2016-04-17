@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,8 @@ public class NewPost extends AppCompatActivity {
 
         enter=(Button)findViewById(R.id.button13);
         message=(LineEditText)findViewById(R.id.message);
+        message.setHint(Html.fromHtml("<small><small>" + "Please enter your notification" + "</small></small>"));
+
         error=(TextView)findViewById(R.id.textView16);
 
         enter.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +125,8 @@ public class NewPost extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(NewPost.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(NewPost.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(NewPost.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -138,6 +142,10 @@ public class NewPost extends AppCompatActivity {
     @Override
     //to connect the menu with action listner when it is selected, we override this method
     public boolean onOptionsItemSelected(MenuItem item) {
+        ////////////////////////////////////////
+
+
+        ///////////////////////////////////////////
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
             finish(); }
@@ -151,7 +159,7 @@ public class NewPost extends AppCompatActivity {
                                     /*Intent intent = new Intent();
                                     PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
-                            Intent intent = new Intent (getApplicationContext(),Login.class);
+                            Intent intent = new Intent (getApplicationContext(), Login.class);
                             startActivity(intent);
                             finish();
                         }

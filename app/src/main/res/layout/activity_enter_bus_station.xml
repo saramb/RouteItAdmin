@@ -29,13 +29,17 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="1" >
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Line ID:  "
-                    android:id="@+id/textView3" />
+                    android:id="@+id/textView3"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -63,13 +67,17 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Metro station:  "
-                    android:id="@+id/textView7" />
+                    android:id="@+id/textView7"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,13 +105,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:weightSum="1"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="30dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Station position:  "
-                    android:id="@+id/textView32" />
+                    android:id="@+id/textView32"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <Spinner
                     android:layout_width="match_parent"
@@ -123,24 +134,25 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:weightSum="1"
-                >
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Station street"
                     android:id="@+id/StreettextView"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
                     />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText2"
-                    android:hint="Please enter station street"
                     android:imeOptions="actionNext"
-                    android:singleLine="true"/>
+                    android:singleLine="true"
+                     />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -152,26 +164,31 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="1" >
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Station ID:"
-                    android:id="@+id/textView4" />
+                    android:id="@+id/textView4"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText4"
-                    android:hint="Please enter station ID"
                     android:imeOptions="actionNext"
-                    android:singleLine="true"/>
+                    android:singleLine="true"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView25" />
+                    android:id="@+id/textView25"
+                    />
 
 
             </LinearLayout>
@@ -180,21 +197,24 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="1" >
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name:"
-                    android:id="@+id/textView5" />
+                    android:id="@+id/textView5"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText5"
-                    android:hint="Please enter station name"
                     android:imeOptions="actionNext"
-                    android:singleLine="true"/>
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -206,21 +226,25 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="1" >
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="X Coordinate:"
-                    android:id="@+id/textView6" />
+                    android:id="@+id/textView6"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText15"
-                    android:hint="Please enter X Coordinate:"
                     android:imeOptions="actionNext"
-                    android:singleLine="true"/>
+                    android:singleLine="true"
+               />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -241,13 +265,15 @@
                     android:text="Y Coordinate:"
                     android:id="@+id/textView30"
                     android:imeOptions="actionDone"
-                    android:singleLine="true"/>
+                    android:singleLine="true"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textIsSelectable="false"/>
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText"
-                    android:hint="Please enter Y Coordinate:" />
+                    android:id="@+id/editText" />
 
             </LinearLayout>
 

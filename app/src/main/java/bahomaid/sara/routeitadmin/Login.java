@@ -13,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,8 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-    public static final String ROOT_URL ="http://rawan.16mb.com/tesst/";
+    public static final String ROOT_URL ="http://10.12.195.173/";
+   // public static final String ROOT_URL ="http://192.168.1.63:8082/";
 
     public static String admin="";
 
@@ -40,7 +42,7 @@ public class Login extends AppCompatActivity {
     Button login;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -50,7 +52,8 @@ public class Login extends AppCompatActivity {
         login = (Button) findViewById(R.id.button);
         wrong=(TextView)findViewById(R.id.textView31);
 
-
+        username.setHint(Html.fromHtml("<small>" + "Enter your username" +"</small>"));
+        pass.setHint(Html.fromHtml("<small>" + "Enter your password" +"</small>"));
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +141,8 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(Login.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(Login.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );

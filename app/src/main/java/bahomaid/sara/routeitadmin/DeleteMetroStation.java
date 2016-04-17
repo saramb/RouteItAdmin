@@ -148,7 +148,8 @@ public class DeleteMetroStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(DeleteMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(DeleteMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(DeleteMetroStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -212,7 +213,8 @@ public class DeleteMetroStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(DeleteMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(DeleteMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(DeleteMetroStation.this,"Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );

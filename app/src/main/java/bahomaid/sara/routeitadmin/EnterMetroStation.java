@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -52,10 +53,20 @@ public class EnterMetroStation extends AppCompatActivity {
 
         enter=(Button)findViewById(R.id.button18);
         MetroLine=(Spinner)findViewById(R.id.MetroLine);
+
         station =(EditText) findViewById(R.id.metroId);
+        station.setHint(Html.fromHtml("<small><small>" + "Please enter station ID" + "</small></small>"));
+
         name =(EditText) findViewById(R.id.metroName);
+        name.setHint(Html.fromHtml("<small><small>" + "Please enter station name" + "</small></small>"));
+
+
         coor =(EditText) findViewById(R.id.metroCoordinates);
+        coor.setHint(Html.fromHtml("<small><small>" + "Please enter X Coordinate" + "</small></small>"));
+
         coor2 =(EditText) findViewById(R.id.metroCoordinates2);
+        coor2.setHint(Html.fromHtml("<small><small>" + "Please enter Y Coordinate" + "</small></small>"));
+
         final TextView error=(TextView)findViewById(R.id.textView2);
         final TextView error2=(TextView)findViewById(R.id.textView36);
         Position=(Spinner)findViewById(R.id.spinner7);
@@ -248,7 +259,8 @@ public class EnterMetroStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(EnterMetroStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -314,7 +326,8 @@ public class EnterMetroStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                       // Toast.makeText(EnterMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(EnterMetroStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
@@ -345,9 +358,11 @@ public class EnterMetroStation extends AppCompatActivity {
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);
-                            finish();
+                           finish();
+
                         }
                     })
+
 
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
