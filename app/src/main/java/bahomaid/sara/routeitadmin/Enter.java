@@ -68,6 +68,7 @@ public class Enter extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
+
             Intent intent = new Intent (getApplicationContext(),Menu.class);
             startActivity(intent);
             finish();

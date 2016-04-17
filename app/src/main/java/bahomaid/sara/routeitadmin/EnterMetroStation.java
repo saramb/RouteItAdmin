@@ -345,6 +345,7 @@ public class EnterMetroStation extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         //item detects any clicked button in menu
         if (item.getItemId() == R.id.return_) {
+
             Intent intent = new Intent (getApplicationContext(),Enter.class);
             startActivity(intent);
             finish();
@@ -365,6 +366,7 @@ public class EnterMetroStation extends AppCompatActivity {
 
                         }
                     })
+
 
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
