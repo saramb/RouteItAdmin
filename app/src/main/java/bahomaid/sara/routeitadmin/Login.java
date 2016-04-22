@@ -32,11 +32,9 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-  //  public static final String ROOT_URL ="http://10.12.195.173/";
-   public static final String ROOT_URL ="http://192.168.1.63:8082/";
+   public static final String ROOT_URL ="http://192.168.1.65/";
 
     public static String admin="";
-
     EditText username , pass;
     TextView wrong;
     Button login;
@@ -52,8 +50,8 @@ public class Login extends AppCompatActivity {
         login = (Button) findViewById(R.id.button);
         wrong=(TextView)findViewById(R.id.textView31);
 
-        username.setHint(Html.fromHtml("<small>" + "Enter your username" +"</small>"));
-        pass.setHint(Html.fromHtml("<small>" + "Enter your password" +"</small>"));
+        username.setHint(Html.fromHtml("<style='font-size:200%'>" + "Enter your username" +"</style>"));
+        pass.setHint(Html.fromHtml("<style='font-size:200%'>"+ "Enter your password" +"</style>"));
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +83,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void login(){
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to retrieve admin to mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -141,7 +139,6 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        //Toast.makeText(Login.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(Login.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }

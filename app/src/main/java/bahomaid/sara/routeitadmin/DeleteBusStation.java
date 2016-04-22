@@ -80,7 +80,7 @@ public class DeleteBusStation extends AppCompatActivity {
     }
 
     private void DeleteBusStation(){
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to delete bus to mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -89,7 +89,7 @@ public class DeleteBusStation extends AppCompatActivity {
         //Creating object for our interface
         routeAPI api = adapter.create(routeAPI.class);
 
-        //Defining the method insertuser of our interface
+        //Defining the method delete from our interface
         api.DeleteBusStation(
 
                 //Passing the values by getting it from editTexts
@@ -124,7 +124,6 @@ public class DeleteBusStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        //Toast.makeText(DeleteBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(DeleteBusStation.this,"Please check your internet connection", Toast.LENGTH_LONG).show();
 
                     }
@@ -133,7 +132,7 @@ public class DeleteBusStation extends AppCompatActivity {
     }
 
     private void Retrieve(){
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to retrive from mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -141,7 +140,7 @@ public class DeleteBusStation extends AppCompatActivity {
 
         //Creating object for our interface
         routeAPI api = adapter.create(routeAPI.class);
-        //Defining the method insertuser of our interface
+        //Defining the method retrieve of our interface
         api.Retrieve(
 
                 //Passing the values by getting it from editTexts
@@ -174,8 +173,6 @@ public class DeleteBusStation extends AppCompatActivity {
                                 }
                             }
 
-                            //
-
                             ArrayAdapter<String> adapter = new ArrayAdapter<String>(DeleteBusStation.this, android.R.layout.simple_dropdown_item_1line, spin);
                             dropdown.setAdapter(adapter);
 
@@ -190,7 +187,6 @@ public class DeleteBusStation extends AppCompatActivity {
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                       // Toast.makeText(DeleteBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(DeleteBusStation.this,"Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -216,8 +212,7 @@ public class DeleteBusStation extends AppCompatActivity {
                     .setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
+
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);

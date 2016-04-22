@@ -41,7 +41,7 @@ public class NewPost extends AppCompatActivity {
 
         enter=(Button)findViewById(R.id.button13);
         message=(LineEditText)findViewById(R.id.message);
-        message.setHint(Html.fromHtml("<small><small>" + "Please enter your notification" + "</small></small>"));
+        message.setHint(Html.fromHtml("<style='font-size:180%'>"+"Please enter your notification" + "</style>"));
 
         error=(TextView)findViewById(R.id.textView16);
 
@@ -49,7 +49,6 @@ public class NewPost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (message.getText().toString().equals("")) {
-                    // error.requestFocus();
                     error.setText("The field is empty, Please enter yout notification ");
                     error.setError("");
 
@@ -62,8 +61,6 @@ public class NewPost extends AppCompatActivity {
                             .setPositiveButton("Post", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                                     AddNotif();
                                     finish();
                                 }
@@ -81,7 +78,7 @@ public class NewPost extends AppCompatActivity {
         });
     }
     private void AddNotif() {
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to  add notif to mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -156,8 +153,7 @@ public class NewPost extends AppCompatActivity {
                     .setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
+
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(), Login.class);
                             startActivity(intent);
@@ -176,7 +172,6 @@ public class NewPost extends AppCompatActivity {
         }
 
         //we can do multiple menus for the same activity, and switch between them depending on the condition I want
-
         return super.onOptionsItemSelected(item);
     }
 }

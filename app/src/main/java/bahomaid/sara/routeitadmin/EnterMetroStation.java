@@ -55,17 +55,17 @@ public class EnterMetroStation extends AppCompatActivity {
         MetroLine=(Spinner)findViewById(R.id.MetroLine);
 
         station =(EditText) findViewById(R.id.metroId);
-        station.setHint(Html.fromHtml("<small><small>" + "Please enter station ID" + "</small></small>"));
+        station.setHint(Html.fromHtml("<style='font-size:180%'>"+ "Please enter station ID" + "</style>"));
 
         name =(EditText) findViewById(R.id.metroName);
-        name.setHint(Html.fromHtml("<small><small>" + "Please enter station name" + "</small></small>"));
+        name.setHint(Html.fromHtml("<style='font-size:180%'>"+ "Please enter station name" + "</style>"));
 
 
         coor =(EditText) findViewById(R.id.metroCoordinates);
-        coor.setHint(Html.fromHtml("<small><small>" + "Please enter X Coordinate" + "</small></small>"));
+        coor.setHint(Html.fromHtml("<style='font-size:180%'>"+ "Please enter X Coordinate" + "</style>"));
 
         coor2 =(EditText) findViewById(R.id.metroCoordinates2);
-        coor2.setHint(Html.fromHtml("<small><small>" + "Please enter Y Coordinate" + "</small></small>"));
+        coor2.setHint(Html.fromHtml("<style='font-size:180%'>"+"Please enter Y Coordinate" + "</style>"));
 
         final TextView error=(TextView)findViewById(R.id.textView2);
         final TextView error2=(TextView)findViewById(R.id.textView36);

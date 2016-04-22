@@ -57,20 +57,20 @@ public class EnterBusStation extends AppCompatActivity {
 
         enter=(Button)findViewById(R.id.button9);
         station=(EditText)findViewById(R.id.editText4);
-        station.setHint(Html.fromHtml("<small><small>" + "Please enter station ID" + "</small></small>"));
+        station.setHint(Html.fromHtml("<style='font-size:180%'>"+ "Please enter station ID" + "</style>"));
 
         name=(EditText)findViewById(R.id.editText5);
-        name.setHint(Html.fromHtml("<small><small>" + "Please enter station name" + "</small><small>"));
+        name.setHint(Html.fromHtml("<style='font-size:180%'>" + "Please enter station name" + "</style>"));
 
         coorX=(EditText)findViewById(R.id.editText15);
-        coorX.setHint(Html.fromHtml("<small><small>" + "Please enter X Coordinate" + "</small></small>"));
+        coorX.setHint(Html.fromHtml("<style='font-size:180%'>" + "Please enter X Coordinate" + "</style>"));
 
         coorY=(EditText)findViewById(R.id.editText);
-        coorY.setHint(Html.fromHtml("<small><small>" + "Please enter Y Coordinate" + "</small></small>"));
+        coorY.setHint(Html.fromHtml("<style='font-size:180%'>" + "Please enter Y Coordinate" + "</style>"));
 
 
         street=(EditText)findViewById(R.id.editText2);
-        street.setHint(Html.fromHtml("<small><small>" + "Please enter station street" + "</small></small>"));
+        street.setHint(Html.fromHtml("<style='font-size:180%'>" + "Please enter station street" + "</style>"));
 
         stationStreet=(TextView)findViewById(R.id.StreettextView);
         dropdown1=(Spinner)findViewById(R.id.spinner4);
@@ -110,19 +110,16 @@ public class EnterBusStation extends AppCompatActivity {
 
 
             if (dropdown1.getSelectedItem().toString().equals(" ")) {
-                        //error.requestFocus();
                         error.setError("Please select line ID");
                     }else
                         error.setError(null);
 
                     if (dropdown2.getSelectedItem().toString().equals(" ")) {
-                        // error2.requestFocus();
                         error2.setError("Please select the position of the station");
                     }else
                         error2.setError(null);
 
                     if (dropdown3.getSelectedItem().toString().equals(" ")) {
-                        // error2.requestFocus();
                         error3.setError("Please select the position of the station");
                     }else
                         error3.setError(null);
@@ -197,11 +194,6 @@ public class EnterBusStation extends AppCompatActivity {
 
 
 
-
-
-
-
-
                 if(done1 &&done2 &&done3 &&done4 &&done5){
 
                     error.setError(null);
@@ -246,7 +238,7 @@ public class EnterBusStation extends AppCompatActivity {
     }
 
     private void EnterBusStation(){
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to insert bus station to mysql db
         //Creating a RestAdapter
 
         RestAdapter adapter = new RestAdapter.Builder()
@@ -259,9 +251,6 @@ public class EnterBusStation extends AppCompatActivity {
         String LocationID = "2."+ dropdown1.getSelectedItemPosition()+"."+street.getText().toString()+"."+station.getText().toString();
 
 
-
- //Admin=getIntent().getExtras().getString("AdminID");
-        //Defining the method insertuser of our interface
         api.EnterBusStation(
 
 
@@ -301,13 +290,11 @@ public class EnterBusStation extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        //Displaying the output as a toast
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                       // Toast.makeText(EnterBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(EnterBusStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -316,7 +303,7 @@ public class EnterBusStation extends AppCompatActivity {
 
 
     private void Retrieve(){
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to  retrieve to mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -368,28 +355,18 @@ public class EnterBusStation extends AppCompatActivity {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                        //Displaying the output as a toast
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
-                        //If any error occured displaying the error as toast
-                       // Toast.makeText(EnterBusStation.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(EnterBusStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
         );
 
 
-       /* RestAdapter adapter2 = new RestAdapter.Builder()
-                .setEndpoint(ROOT_URL) //Setting the Root URL
-                .build(); //Finally building the adapter
 
-        //Creating object for our interface
-        routeAPI api2 = adapter.create(routeAPI.class);*////تعديلمهم نشوفه
-
-        //Defining the method insertuser of our interface
+        //Defining the method retrieve of our interface
         api.Retrieve(
 
                 //Passing the values by getting it from editTexts
@@ -427,8 +404,6 @@ public class EnterBusStation extends AppCompatActivity {
 
                             dropdown2.setAdapter(adapter2);
 
-                            //Toast.makeText(EnterBusStation.this, output, Toast.LENGTH_LONG).show();
-
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -464,8 +439,6 @@ public class EnterBusStation extends AppCompatActivity {
                     .setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);

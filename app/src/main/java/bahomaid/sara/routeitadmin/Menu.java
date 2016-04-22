@@ -28,9 +28,7 @@ public class Menu extends AppCompatActivity {
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // adminId= getIntent().getExtras().getString("AdminID");
                 Intent i =new Intent(getApplicationContext(),Enter.class);
-               // i.putExtra("ID", adminId);
                 startActivity(i);
             }
         });
@@ -72,8 +70,7 @@ public class Menu extends AppCompatActivity {
                     .setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
+
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);
@@ -92,7 +89,6 @@ public class Menu extends AppCompatActivity {
         }
 
         //we can do multiple menus for the same activity, and switch between them depending on the condition I want
-
         return super.onOptionsItemSelected(item);
     }
 }

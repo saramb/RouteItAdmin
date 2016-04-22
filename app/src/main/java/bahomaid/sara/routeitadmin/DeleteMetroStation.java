@@ -112,7 +112,7 @@ public class DeleteMetroStation extends AppCompatActivity {
         //Creating object for our interface
         routeAPI api = adapter.create(routeAPI.class);
 
-        //Defining the method insertuser of our interface
+        //Defining the method delete metro of our interface
         api.DeleteMetroStation(
 
                 //Passing the values by getting it from editTexts
@@ -141,14 +141,11 @@ public class DeleteMetroStation extends AppCompatActivity {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                        //Displaying the output as a toast
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        //Toast.makeText(DeleteMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(DeleteMetroStation.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }
@@ -156,7 +153,7 @@ public class DeleteMetroStation extends AppCompatActivity {
     }
 
     private void Retrieve(){
-        //Here we will handle the http request to insert user to mysql db
+        //Here we will handle the http request to retrieve from mysql db
         //Creating a RestAdapter
         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT_URL) //Setting the Root URL
@@ -205,15 +202,12 @@ public class DeleteMetroStation extends AppCompatActivity {
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
-                        //Displaying the output as a toast
                     }
 
                     //
                     @Override
                     public void failure(RetrofitError error) {
                         //If any error occured displaying the error as toast
-                        //Toast.makeText(DeleteMetroStation.this, error.toString(), Toast.LENGTH_LONG).show();
                         Toast.makeText(DeleteMetroStation.this,"Please check your internet connection", Toast.LENGTH_LONG).show();
                     }
                 }

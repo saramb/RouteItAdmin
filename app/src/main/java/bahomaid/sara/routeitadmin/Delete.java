@@ -62,8 +62,6 @@ public class Delete extends AppCompatActivity {
                     .setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);

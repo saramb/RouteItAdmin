@@ -26,9 +26,6 @@ public class Enter extends AppCompatActivity {
 
 
 
-
-
-
         enter_bus_station=(Button)findViewById(R.id.button6);
         enter_metro_station=(Button)findViewById(R.id.button7);
 
@@ -37,9 +34,7 @@ public class Enter extends AppCompatActivity {
         enter_bus_station.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // adminId = getIntent().getExtras().getString("AdminID");
                 Intent i = new Intent(getApplicationContext(), EnterBusStation.class);
-                //i.putExtra("AdminID", adminId);
                 startActivity(i);
             }
         });
@@ -47,9 +42,7 @@ public class Enter extends AppCompatActivity {
         enter_metro_station.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   adminId = getIntent().getExtras().getString("AdminID");
                 Intent i = new Intent(getApplicationContext(), EnterMetroStation.class);
-             //   i.putExtra("AdminID", adminId);
                 startActivity(i);
             }
         });
@@ -76,8 +69,7 @@ public class Enter extends AppCompatActivity {
                     .setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                                    /*Intent intent = new Intent();
-                                    PendingIntent pIntent = PendingIntent.getActivity(NewPost.this, 0, intent, 0);*///مهم نشوفها
+
                             Login.admin="";
                             Intent intent = new Intent (getApplicationContext(),Login.class);
                             startActivity(intent);
