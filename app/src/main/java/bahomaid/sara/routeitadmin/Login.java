@@ -32,7 +32,7 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-   public static final String ROOT_URL ="http://192.168.1.65/";
+   public static final String ROOT_URL ="http://rawan.16mb.com/Route-it/";
 
     public static String admin="";
     EditText username , pass;
