@@ -1,8 +1,11 @@
 package bahomaid.sara.routeitadmin;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -38,11 +41,14 @@ public class Login extends AppCompatActivity {
     EditText username , pass;
     TextView wrong;
     Button login;
+    boolean isInternetPresent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
 
 
         username =(EditText) findViewById(R.id.username);
@@ -52,6 +58,11 @@ public class Login extends AppCompatActivity {
 
         username.setHint(Html.fromHtml("<style='font-size:200%'>" + "Enter your username" +"</style>"));
         pass.setHint(Html.fromHtml("<style='font-size:200%'>"+ "Enter your password" +"</style>"));
+        ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
+         isInternetPresent = cd.isConnectingToInternet(); // true or false
+        if (!isInternetPresent)
+            showInternetDisabledAlertToUser();
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,9 +87,10 @@ public class Login extends AppCompatActivity {
                     pass.setError(null);
                 }
                 if (!(username.getText().toString().equals("") || pass.getText().toString().equals("")))
+                {
                     login();
 
-            }
+            }}
         });
     }
 
@@ -119,13 +131,11 @@ public class Login extends AppCompatActivity {
 
 
                             if (output.equals("Successfully logged in")) {
-                                Toast.makeText(getApplicationContext(),output+"",Toast.LENGTH_SHORT).show();
-                                admin=username.getText().toString();
-                                Intent i = new Intent(getApplicationContext(),Menu.class);
+                                Toast.makeText(getApplicationContext(), output + "", Toast.LENGTH_SHORT).show();
+                                admin = username.getText().toString();
+                                Intent i = new Intent(getApplicationContext(), Menu.class);
                                 startActivity(i);
-                        }
-
-                            else {
+                            } else {
                                 wrong.setText("Wrong user name or password  ");
                                 wrong.setError("");
                             }
@@ -144,5 +154,43 @@ public class Login extends AppCompatActivity {
                 }
         );
     }
+    public void showInternetDisabledAlertToUser(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("There is no internet connection on your device. Would you like to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Enable",
+                        new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id){
+                                Intent callGPSSettingIntent = new Intent(
+                                        android.provider.Settings.ACTION_SETTINGS);
+                                startActivity(callGPSSettingIntent);
+                                check();
 
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("No",
+                new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id){
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+    }
+    public void check(){
+        ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
+        boolean isInternetPresent = cd.isConnectingToInternet();
+        if(!isInternetPresent){
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    check();
+                }
+            }, 100);
+        }
+        else
+        {
+            return;}
+    }
 }
