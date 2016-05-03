@@ -35,7 +35,9 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-   public static final String ROOT_URL ="http://rawan.16mb.com/Route-it/";
+   public static final String ROOT_URL ="http://rawan.16mb.com/RouteIt/";
+  // public static final String ROOT_URL = "http://192.168.100.14/";
+
 
     public static String admin="";
     EditText username , pass;
@@ -168,12 +170,6 @@ public class Login extends AppCompatActivity {
 
                             }
                         });
-        alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog, int id){
-                        dialog.cancel();
-                    }
-                });
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
     }
