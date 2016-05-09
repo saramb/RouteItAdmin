@@ -115,7 +115,7 @@ public class EnterBusStation extends AppCompatActivity {
                         error.setError(null);
 
                     if (dropdown2.getSelectedItem().toString().equals(" ")) {
-                        error2.setError("Please select the position of the station");
+                        error2.setError("Please select metro station");
                     }else
                         error2.setError(null);
 
@@ -125,7 +125,7 @@ public class EnterBusStation extends AppCompatActivity {
                         error3.setError(null);
 
                     if (station.getText().toString().equals("")) {
-                        station.setError("Please fill station ID");
+                        station.setError("Please fill the station ID");
                     }
                     else{
                         station.setError(null);
@@ -141,7 +141,7 @@ public class EnterBusStation extends AppCompatActivity {
                         name.setError("Please fill the name");
                     }
                     if (coorX.getText().toString().equals("")) {
-                        coorX.setError("Please fill the X coordination");
+                        coorX.setError("Please fill the X coordinate");
                     }else{
 
                         coorX.setError(null);
@@ -154,12 +154,12 @@ public class EnterBusStation extends AppCompatActivity {
                         done4 = true;
 
                     } else {
-                        coorX.setError("Please enter coordinate start with 24.XXX ");
+                        coorX.setError("Please enter coordinate starts with 24.XXX ");
                             done4 = false;
 
                         }}
                     if (coorY.getText().toString().equals("")) {
-                        coorY.setError("Please fill the Y coordination");
+                        coorY.setError("Please fill the Y coordinate");
                     }else{
                         coorY.setError(null);
                         if (coorY.getText().toString().contains(".") && coorY.getText().toString().length() >= 4 &&
@@ -170,7 +170,7 @@ public class EnterBusStation extends AppCompatActivity {
                             done5 = true;
 
                         } else {
-                            coorY.setError("Please enter coordinate start with 46.XXX");
+                            coorY.setError("Please enter coordinate starts with 46.XXX");
                             done5 = false;
 
                         }

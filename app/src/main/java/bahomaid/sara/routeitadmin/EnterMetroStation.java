@@ -105,7 +105,7 @@ public class EnterMetroStation extends AppCompatActivity {
                         error2.setError(null);
 
                     if (station.getText().toString().equals("")) {
-                        station.setError("Please fill station ID");
+                        station.setError("Please fill the station ID");
                     }else{
 
                         station.setError(null);
@@ -123,7 +123,7 @@ public class EnterMetroStation extends AppCompatActivity {
                     }
 
                     if (coor.getText().toString().equals("")) {
-                        coor.setError("Please fill the coordination");
+                        coor.setError("Please fill the coordinates");
                     }
 
                 else{
@@ -137,7 +137,7 @@ public class EnterMetroStation extends AppCompatActivity {
                             done4 = true;
 
                         } else {
-                            coor.setError("Please enter coordinate start with 24.XXX");
+                            coor.setError("Please enter coordinate starts with 24.XXX");
                             done4 = false;
 
                         }
@@ -146,7 +146,7 @@ public class EnterMetroStation extends AppCompatActivity {
                     }
 
                     if (coor2.getText().toString().equals("")) {
-                        coor2.setError("Please fill the coordination");
+                        coor2.setError("Please fill the coordinate");
                     }                else{
                         coor2.setError(null);
 
@@ -158,7 +158,7 @@ public class EnterMetroStation extends AppCompatActivity {
                             done5 = true;
 
                         } else {
-                            coor2.setError("Please enter coordinate start with 46.XXX");
+                            coor2.setError("Please enter coordinate starts with 46.XXX");
                             done5 = false;
 
                         }

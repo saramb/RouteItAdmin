@@ -37,7 +37,8 @@
                     android:textStyle="bold"
                     android:layout_centerInParent="true"
                     android:ellipsize="start"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center"
+                    android:autoText="false" />
             </LinearLayout>
 
             <LinearLayout
@@ -58,7 +59,7 @@
                     android:textStyle="bold"
                     android:layout_centerInParent="true"
                     android:ellipsize="start"
-                    android:gravity="center_horizontal"/>
+                    android:gravity="center"/>
 
             </LinearLayout>
 
@@ -66,7 +67,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp">
 
                 <TextView

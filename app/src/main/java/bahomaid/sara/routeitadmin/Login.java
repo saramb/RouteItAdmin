@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,8 +36,8 @@ import retrofit.client.Response;
 
 public class Login extends AppCompatActivity {
 
-   public static final String ROOT_URL ="http://rawan.16mb.com/RouteIt/";
-  // public static final String ROOT_URL = "http://192.168.100.14/";
+   //public static final String ROOT_URL ="http://rawan.16mb.com/RouteIt/";
+  public static final String ROOT_URL = "http://192.168.1.120:8080/";
 
 
     public static String admin="";
@@ -57,8 +58,13 @@ public class Login extends AppCompatActivity {
         pass =(EditText) findViewById(R.id.pass);
         login = (Button) findViewById(R.id.button);
         wrong=(TextView)findViewById(R.id.textView31);
-
-        username.setHint(Html.fromHtml("<style='font-size:200%'>" + "Enter your username" +"</style>"));
+        Drawable image = getResources().getDrawable(R.mipmap.admin_icon);
+        image.setBounds(18, 4, 75, 68);
+        username.setCompoundDrawables(image, null, null, null);
+        username.setHint(Html.fromHtml("<style='font-size:200%; padding-top:15%;'>" + "Enter your username" + "</style>"));
+        image = getResources().getDrawable(R.mipmap.lock_icon);
+        image.setBounds(12, 0, 80, 68);
+        pass.setCompoundDrawables(image, null, null, null);
         pass.setHint(Html.fromHtml("<style='font-size:200%'>"+ "Enter your password" +"</style>"));
         ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
          isInternetPresent = cd.isConnectingToInternet(); // true or false
